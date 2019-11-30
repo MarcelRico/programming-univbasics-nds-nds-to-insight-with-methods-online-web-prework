@@ -17,6 +17,10 @@ end
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
 def gross_for_director(director_data)
+  total = 0
   movies = director_data[:movies]
-  movies.length.
+  movies.length.times do |movie_idx|
+  total+=movies[movie_idx][:worldwide_gross]
+  end
+  return total
 end
