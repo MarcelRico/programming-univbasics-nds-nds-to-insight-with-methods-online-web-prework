@@ -6,9 +6,12 @@ require 'directors_database'
 # { directorOne => allTheMoneyTheyMade, ... }
 
 def directors_totals(nds)
-  nds.length.times do ||
-    
+  director_profits = {}
+  nds.length.times do |idx|
+    director = nds[idx][:name]
+    director_profits[director] = gross_for_director(nds[idx])
   end
+  return director_profits
 end
 
 # Find a way to accumulate the :worldwide_grosses and return that Integer
