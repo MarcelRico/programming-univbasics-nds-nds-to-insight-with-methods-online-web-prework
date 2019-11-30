@@ -16,7 +16,7 @@ def directors_totals(nds)
     movie_list = nds[outer_idx][:movies]
     
     movie_list.length.times do |inner_index|
-      director_total+=movie_list[inner_index][:worldwide_gross]
+      director_total += movie_list[inner_index][:worldwide_gross]
     end
     
     r_hash[director] = director_total
