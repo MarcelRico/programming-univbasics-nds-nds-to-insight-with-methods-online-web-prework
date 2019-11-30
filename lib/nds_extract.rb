@@ -15,7 +15,9 @@ end
 # using director_data as input
 def gross_for_director(director_data)
 
-  director_data[:movies].length.times do |idx|
+
+  movie_list = director_data[:movies]
+  movie_list.length.times do |idx|
     director_total = 0
     director = director_data[outer_idx][:name]
     movie_list = director_data[outer_idx][:movies]
