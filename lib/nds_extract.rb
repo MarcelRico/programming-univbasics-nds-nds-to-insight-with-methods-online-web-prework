@@ -7,13 +7,18 @@ require 'directors_database'
 
 def directors_totals(nds)
   
+end
+
+# Find a way to accumulate the :worldwide_grosses and return that Integer
+# using director_data as input
+def gross_for_director(director_data)
   r_hash = {}
   
-  nds.length.times do |outer_idx|
+  director_data.length.times do |outer_idx|
     
     director_total = 0
-    director = nds[outer_idx][:name]
-    movie_list = nds[outer_idx][:movies]
+    director = director_data[outer_idx][:name]
+    movie_list = director_data[outer_idx][:movies]
     
     movie_list.length.times do |inner_index|
       director_total += movie_list[inner_index][:worldwide_gross]
@@ -23,10 +28,4 @@ def directors_totals(nds)
   end
   
   r_hash
-end
-
-# Find a way to accumulate the :worldwide_grosses and return that Integer
-# using director_data as input
-def gross_for_director(director_data)
-  
 end
