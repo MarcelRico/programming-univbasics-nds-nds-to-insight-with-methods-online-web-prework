@@ -15,9 +15,10 @@ end
 # using director_data as input
 def gross_for_director(director_data)
 
-  director_total = 0
-  director = director_data[outer_idx][:name]
-  movie_list = director_data[outer_idx][:movies]
+  director_data[:movies].length.times do |idx|
+    director_total = 0
+    director = director_data[outer_idx][:name]
+    movie_list = director_data[outer_idx][:movies]
     
   movie_list.length.times do |inner_index|
     director_total += movie_list[inner_index][:worldwide_gross]
